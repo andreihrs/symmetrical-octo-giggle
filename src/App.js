@@ -11,10 +11,13 @@ import SideBar from './components/SideBar.js'
 function App() {
   return (
    <div>
-     {/* <HeroSection /> */}
-     <SideBar />
-     {/* <BlogSections />
-     <Footer /> */}
+     <HeroSection />
+     {/* <SideBar>
+       <CompanyCard />
+     </SideBar> */}
+     <Features />
+     <BlogSections />
+     <Footer />
    </div>
   );
 }
