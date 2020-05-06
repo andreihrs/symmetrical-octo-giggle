@@ -7,17 +7,25 @@ import LoginScreen from './components/LoginScreen.js'
 import BlogSections from './components/BlogSections.js'
 import Features from './components/Features.js'
 import SideBar from './components/SideBar.js'
+import NavHeader from './components/NavHeader.js'
+import OrgChart from './components/OrgChart.js'
+
 
 function App() {
   return (
    <div>
-     <HeroSection />
-     {/* <SideBar>
-       <CompanyCard />
-     </SideBar> */}
+     {/* <HeroSection />
      <Features />
      <BlogSections />
-     <Footer />
+     <Footer /> */}
+     {/* <SideBar>
+       <CompanyCard />
+       <CompanyCard />
+       <CompanyCard />
+     </SideBar> */}
+     <SideBar>
+      <OrgChart />
+     </SideBar>
    </div>
   );
 }
