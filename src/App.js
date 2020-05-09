@@ -11,15 +11,12 @@ import NavHeader from './components/NavHeader.js'
 import OrgChart from './components/OrgChart.js'
 import CompanyProfile from './components/CompanyProfile.js';
 import UserProfile from './components/UserProfile.js'
+import SideProfile from './components/SideProfile.js'
 
 
 function App() {
   return (
    <div>
-     {/* <HeroSection />
-     <Features />
-     <BlogSections />
-     <Footer /> */}
      {/* <SideBar>
        <CompanyCard />
        <CompanyCard />
@@ -41,7 +38,7 @@ function App() {
       </div>
       <OrgChart />*/}
 
-      <UserProfile />
+      <SideProfile />
 
     </div> 
   );
