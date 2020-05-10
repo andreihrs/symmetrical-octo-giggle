@@ -3,6 +3,9 @@ import '../styles/orgchart.css'
 import '../styles/main.css'
 
 const OrgChart = () => {
+  // TO-DO: MAKE IT RESPONSIVE
+  // TO-DO: ADD BUTTON TO HIDE EMPLOYEES UNDER MGMT
+  // TO-DO: MAKE THE 3RD GRADE EMPLOYEES LOOK ALL SIMILAR
   return (
     <div class="py-10">
       <div class="org-chart flex justify-center">

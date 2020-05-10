@@ -2,8 +2,10 @@ import React from 'react'
 import '../styles/main.css'
 import '../styles/userprofile.css'
 import CompanyProfile from './CompanyProfile'
+import placehold from '../unsplash.jpg'
 
 const Profile = () => {
+  //TO-DO: MAKE IT MORE BEAUTIFUL
   return (
     <div class="bg-gray-100 h-screen px-5 py-2">
       <div class="relative flex flex-col">
@@ -14,19 +16,23 @@ const Profile = () => {
             </svg>
           </button>
         </div>
-        <div class="self-center flex flex-col items-center border w-64">
+        <div class="self-center flex flex-col items-center w-64">
           <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-16 w-16 rounded-full mb-2"/>
           <h4>Ioannis Papadopulous</h4>
           <div class="text-xs text-gray-500">
             <p>Software Developer</p>
             <p>Zurich, Switzerland</p>
           </div>
-          <div>
-            <div class="inline-flex text-sm">
-              <p>Connections</p>
-              <span>150</span>
-              <p>Profile views</p>
-              <span>30</span>
+          <div class="w-full">
+            <div class="inline-flex justify-around text-xs w-full">
+              <div class="inline-flex">
+                <p class="text-gray-500">Connections</p>
+                <span class="font-medium">&nbsp;150</span>
+              </div>
+              <div class="inline-flex">
+                <p class="text-gray-500">Profile views</p>
+                <span class="font-medium">&nbsp;30</span>
+              </div>
             </div>
           </div>
           <div class="my-2">
@@ -38,8 +44,9 @@ const Profile = () => {
         <div class="grid grid-cols-3 gap-8 mx-5 mt-5">
           <div>
             <h3>Portfolio</h3>
-            <div class="bg-white w-64">
-
+            <div class="bg-white w-64 mt-3 border">
+              <img src={placehold} class="mb-4"/>
+              <img src={placehold} />
             </div>
           </div>
           <div>
@@ -82,6 +89,23 @@ const Profile = () => {
           </div>
           <div>
             <h3>Skills</h3>
+            <ul class="list-disc text mt-4 leading-10">
+              <li>
+                Python
+              </li>
+              <li>
+                Ruby
+              </li>
+              <li>
+                CSS
+              </li>
+              <li>
+                HTML
+              </li>
+              <li>
+                Adobe XD
+              </li>
+            </ul>
           </div>
         </div>
       </div>
