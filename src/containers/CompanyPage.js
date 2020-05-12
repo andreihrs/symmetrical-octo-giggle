@@ -3,8 +3,8 @@ import CompanyChart from '../components/CompanyChart.js'
 import CompanyProfile from '../components/CompanyProfile.js'
 import NavHeader from '../components/NavHeader.js'
 import OrgChart from '../components/OrgChart.js'
-import SideProfile from './components/SideProfile.js'
-
+// TO-DO: Dashboard to see natioanlity, ethnicity, jobs
+// TO-DO: Add suggested groups, cohorts, lists, etc.
 function CompanyPage() {
   return (
     <div>
@@ -23,7 +23,9 @@ function CompanyPage() {
         </div>
       </div>
       <OrgChart />
-      <CompanyChart />
+      {/* <CompanyChart /> */}
     </div>
   )
 }
+
+export default CompanyPage;

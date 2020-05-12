@@ -1,5 +1,4 @@
-// TO-DO: Dashboard to see natioanlity, ethnicity, jobs
-// TO-DO: Add suggested groups, cohorts, lists, etc.
+
 import React from 'react'
 import '../styles/main.css'
 import logo from '../logo.svg'

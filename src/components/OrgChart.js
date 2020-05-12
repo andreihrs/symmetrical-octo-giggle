@@ -8,66 +8,82 @@ const OrgChart = () => {
   // TO-DO: MAKE THE 3RD GRADE EMPLOYEES LOOK ALL SIMILAR
   return (
     <div class="py-10">
-      <div class="org-chart flex justify-center">
-        <ul class="relative pt-5 transition duration-50">
-          <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-            <div class="user">
-              <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto"/>
-              <div class="name mt-4 mx-0 mb-0">Luann Brannick</div>
-              <div class="mt-2 mb-3 font-medium">System Architect</div>
-              <a class="text-sm text-red-700" href="#">Mike Dinardo</a>
-            </div>
-            <ul class="relative pt-5 transition duration-50">
-              <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-                <div class="user">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/nzcode/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto" />
-                  <div class="name mt-4 mx-0 mb-0">Lynn Maynard</div>
-                  <div class="mt-2 mb-3 font-medium">System Architect</div>
-                  <a class="text-sm text-red-700" href="#">Luann Brannick</a>
-                </div>
-                <ul class="relative pt-5 transition duration-50">
-                  <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-                    <div class="user">
-                      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/towhidzaman/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto" />
-                      <div class="name mt-4 mx-0 mb-0">Fleta Odriscoll</div>
-                      <div class="mt-2 mb-3 font-medium">System Architect</div>
-                      <a class="text-sm text-red-700" href="#">Lynn Maynard</a>
-                    </div>
+      <div class="tree">
+        <ul>
+          <li>
+          <a href="#"><img src="http://placehold.it/110x110" alt="CEO" />CEO</a>
+            <ul>
+              <li>
+                <a href="#"><img src="http://placehold.it/110x110" alt="CFO" />CFO</a>
+                <ul>
+                  <li class="flex">
+                    <a href="#" >
+                      <img src="http://placehold.it/25x25" alt="" />
+                      Dan Roberts
+                      Employee
+                    </a>
                   </li>
-                  <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-                    <div class="user">
-                      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto" />
-                      <div class="name mt-4 mx-0 mb-0">Elfreda Grebin</div>
-                      <div class="mt-2 mb-3 font-medium">System Architect</div>
-                      <a class="text-sm text-red-700" href="#">Lynn Maynard</a>
-                    </div>
-                  </li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
                 </ul>
               </li>
-              <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-                <div class="user">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/vista/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto" />
-                  <div class="name mt-4 mx-0 mb-0">Jahn Philson Doe</div>
-                  <div class="mt-2 mb-3 font-medium">System Architect</div>
-                  <a class="text-sm text-red-700" href="#">Luann Brannick</a>
-                </div>
-                <ul class="relative pt-5 transition duration-50">
-                  <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-                    <div class="user">
-                      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto" />
-                      <div class="name mt-4 mx-0 mb-0">Roy Lemarie</div>
-                      <div class="mt-2 mb-3 font-medium">System Architect</div>
-                      <a class="text-sm text-red-700" href="#">Jahn Philson Doe</a>
-                    </div>
-                  </li>
-                  <li class="relative float-left text-center py-5 px-4 transition-all duration-75">
-                    <div class="user">
-                      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg" class="h-60 w-60 rounded-full my-0 mx-auto" />
-                      <div class="name">Eloisa Stubbolo</div>
-                      <div class="mt-2 mb-3 font-medium">System Architect</div>
-                      <a class="text-sm text-red-700" href="#">Jahn Philson Doe</a>
-                    </div>
-                  </li>
+              <li>
+                <a href="#"><img src="http://placehold.it/110x110" alt="" />VP Bus Dev</a>
+                <ul>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><img src="http://placehold.it/110x110" alt="" />VP Div A</a>
+                <ul>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>                </ul>
+              </li>
+              <li><a href="#"><img src="http://placehold.it/110x110" alt="" />VP Div B</a>
+                <ul>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>   
+                </ul>
+              </li>
+              <li><a href="#"><img src="http://placehold.it/110x110" alt="" />VP Div C</a>
+                <ul>
+                <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li> 
+                </ul>
+              </li>
+              <li><a href="#"><img src="http://placehold.it/110x110" alt="VP HR" />VP HR</a>
+                <ul>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
+                  <li><a href="#"><img src="http://placehold.it/25x25" alt="" />Employee</a></li>
                 </ul>
               </li>
             </ul>
