@@ -4,7 +4,7 @@ import '../styles/main.css'
 const SideProfile = () => {
 // TO-DO: ADD THE MOST IMPORTANT FEATURES OF A PROFILE
   return (
-    <div className="absolute flex flex-col w-64 inset-y-0 right-0 border-l border-gray-200 shadow-xs">
+    <div className="absolute flex flex-col w-64 inset-y-0 right-0 border-l border-gray-200 shadow-xs bg-white mt-16">
       <div className="relative w-full text-gray-400 focus-within:text-gray-600">
         <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-1">
           <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">

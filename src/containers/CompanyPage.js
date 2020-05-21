@@ -3,6 +3,7 @@ import CompanyChart from '../components/CompanyChart.js'
 import CompanyProfile from '../components/CompanyProfile.js'
 import NavHeader from '../components/NavHeader.js'
 import OrgChart from '../components/OrgChart.js'
+import SideProfile from '../components/SideProfile.js'
 // TO-DO: Dashboard to see natioanlity, ethnicity, jobs
 // TO-DO: Add suggested groups, cohorts, lists, etc.
 function CompanyPage() {
@@ -12,6 +13,7 @@ function CompanyPage() {
       <CompanyProfile />
       <div className="flex justify-center text-left">
         <div>
+          {/* <SideProfile className="z-10"/> */}
           <span className="rounded-md shadow-sm">
             <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
               Org Chart
