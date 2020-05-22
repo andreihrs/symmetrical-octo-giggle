@@ -9,6 +9,7 @@
   padding-top: 20px;
   margin: 0 auto; 
   position: relative;
+  display: flex;
   
   transition: ease-in-out 1.5s;
   -webkit-transition: ease-in-out 1.5s;
@@ -16,11 +17,13 @@
 }
 
 .tree li {
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
   float: left; 
   text-align: center;
   list-style-type: none;
-  position: relative;
   padding: 20px 5px 0 5px;
   
   transition: ease-in-out 1.5s;
@@ -31,11 +34,14 @@
 /*We will use ::before and ::after to draw the connectors*/
 
 .tree li::after {
+  box-sizing: border-box;
   content: '';
   position: absolute; top: 0; right: 5%;
   border-top: 1.5px solid #ccc;
   width: 105%; height: 20px;
 }
+
+/* Line that shows similar (sibiling) relationship*/
 
 .tree li.prev-selected::after {
   content: "";
@@ -46,6 +52,8 @@
   right: 40%;
   top: 60px;
 }
+
+/* Node that has previous leaders before him (The first vertical line)*/
 
 .tree li.prev-bosses::before {
   content: "";
@@ -62,39 +70,6 @@
   border-left: 1.5px solid #ccc;
   width: 0; height: 20px;
 }
-
-/* .tree li::after{
-  right: auto; left: 50%;
-  border-left: 1px solid #ccc;
-} */
-
-/*We need to remove left-right connectors from elements without 
-any siblings*/
-/* .tree li:only-child::after, .tree li:only-child::before {
-  display: none;
-} */
-
-/*Remove space from the top of single children*/
-/* .tree li:only-child{ padding-top: 0;} */
-
-/*Remove left connector from first child and 
-right connector from last child - .tree li:last-child::after*/
- /* .tree  ul ul li:first-child::before{
-  border: 0 none;
-}  */
-
-/*Adding back the vertical connector to the last nodes*/
-/* .tree li:last-child::before{
-  border-right: 1px solid #ccc;
-  border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  -moz-border-radius: 0 5px 0 0;
-}
-.tree li:first-child::after{
-  border-radius: 5px 0 0 0;
-  -webkit-border-radius: 5px 0 0 0;
-  -moz-border-radius: 5px 0 0 0;
-} */
 
 .tree ul ul ul {
   max-width:150px;
@@ -138,6 +113,7 @@ right connector from last child - .tree li:last-child::after*/
 } */
 
 .tree li a {
+  align-self: center;
   max-width:110px;
 }
 .tree li a img {
