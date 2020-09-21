@@ -1,7 +1,7 @@
-import React from 'react'
-import CompanyCard from '../components/CompanyCard.js'
-import SideBar from '../components/SideBar.js'
- 
+import React from "react";
+import CompanyCard from "../components/CompanyCard.js";
+import SideBar from "../components/SideBar.js";
+
 const Dashboard = () => {
   return (
     <div>
@@ -11,7 +11,7 @@ const Dashboard = () => {
         <CompanyCard />
       </SideBar>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;

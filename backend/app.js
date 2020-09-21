@@ -1,37 +1,38 @@
-const express = require("express")
-const { graphqlHTTP } = require("express-graphql")
+const express = require("express");
+const { graphqlHTTP } = require("express-graphql");
 const {
-    GraphQLID,
-    GraphQLString,
-    GraphQLList,
-    GrapqQLType,
-    GraphQLSchema,
-    GraphQLNonNull,
-    GraphQLObjectType
-} = require("graphql")
+  GraphQLID,
+  GraphQLString,
+  GraphQLList,
+  GrapqQLType,
+  GraphQLSchema,
+  GraphQLNonNull,
+  GraphQLObjectType,
+} = require("graphql");
 const fs = require("fs");
 const fastcsv = require("fast-csv");
 const mongoose = require("mongoose");
 var cors = require("cors");
-var mongoDB = "mongodb+srv://andreihrs:db12345@cluster0.vx7el.mongodb.net/Mycos?retryWrites=true&w=majority";
-const Employee = require("./models/employee")
- 
-let stream = fs.createReadStream("AngelList.csv")
-let csvData = []
+var mongoDB =
+  "mongodb+srv://andreihrs:db12345@cluster0.vx7el.mongodb.net/Mycos?retryWrites=true&w=majority";
+const Employee = require("./models/employee");
+
+let stream = fs.createReadStream("AngelList.csv");
+let csvData = [];
 var app = express();
 app.use(cors());
 
 mongoose
-        .connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
-        .then(() => console.log("Connected to database.."))
-        .catch(err => console.error(err));
+  .connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected to database.."))
+  .catch((err) => console.error(err));
 
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error'))
+db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const PersonModel = mongoose.model("employee", {
-        firstName: String,
-        lastName: String
+  firstName: String,
+  lastName: String,
 });
 
 // Access a specific collection -> mongoose.model('<model name>', schema, '<collection name here>'))
@@ -67,7 +68,7 @@ const PersonModel = mongoose.model("employee", {
 //         //         .insertMany(csvData, (err, res) => {
 //         //             if (err)
 //         //                 throw eror;
-                    
+
 //         //             console.log(`Inserted: ${res.insertedCount} rows`);
 //         //         })
 //         // database.close();
@@ -79,39 +80,36 @@ const PersonModel = mongoose.model("employee", {
 var duplicates = [];
 
 // Employee.aggregate([
-//     { $match: { 
+//     { $match: {
 //       name: { "$ne":'' }  // discard selection criteria
 //    }},
-//    { $group: { 
-//      _id: { name: "$name"}, // can be grouped on multiple properties 
-//      dups: { "$addToSet": "$_id" }, 
-//      count: { "$sum": 1 } 
+//    { $group: {
+//      _id: { name: "$name"}, // can be grouped on multiple properties
+//      dups: { "$addToSet": "$_id" },
+//      count: { "$sum": 1 }
 //     }},
-//    { $match: { 
+//    { $match: {
 //      count: { "$gt": 1 }    // Duplicates considered as count greater than one
 //    }}
 // ]
 // // {allowDiskUse: true}       // For faster processing if set is larger
-// )               // You can display result until this and check duplicates 
+// )               // You can display result until this and check duplicates
 // .exec(function(doc) {
 //      doc.dups.shift();      // First element skipped for deleting
-//      doc.dups.forEach( function(dupId){ 
+//      doc.dups.forEach( function(dupId){
 //          duplicates.push(dupId);   // Getting all duplicate ids
 //          }
 //      )
 // })
 
 // // If you want to Check all "_id" which you are deleting else print statement not needed
-//printjson(duplicates);     
+//printjson(duplicates);
 
-// // Remove all duplicates in one go    
-Employee.remove({_id:{$in:duplicates}})  
-
-/
-
-app.get('/', (req, res) => res.send('hello world'))
+// // Remove all duplicates in one go
+Employee.remove({ _id: { $in: duplicates } }) /
+  app.get("/", (req, res) => res.send("hello world"));
 // app.use("/employee", graphqlHTTP({schema: schema, graphql: true}));
 
 app.listen(3001, () => {
-    console.log("server running at 3001");
-})
+  console.log("server running at 3001");
+});

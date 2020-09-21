@@ -1,7 +1,6 @@
-
-import React from 'react'
-import '../styles/main.css'
-import logo from '../logo.svg'
+import React from "react";
+import "../styles/main.css";
+import logo from "../logo.svg";
 
 const CompanyProfile = () => {
   return (
@@ -11,45 +10,31 @@ const CompanyProfile = () => {
       </div>
       <div className="col-span-2 md:col-span-3 md:mx-0 -ml-4 -mr-8">
         <div className="text-xs">
-          <h3 className="text-xl font-bold text-indigo-600">
-            Google Inc.
-          </h3>
+          <h3 className="text-xl font-bold text-indigo-600">Google Inc.</h3>
           <div className="grid grid-cols-4 gap-2">
             <div className="font-bold text-gray-900">
               Headquarters
-              <p className="font-normal text-gray-600">
-                Mountain View, CA
-              </p>
+              <p className="font-normal text-gray-600">Mountain View, CA</p>
             </div>
             <div className="font-bold text-gray-900">
               Company Size
-              <p className="font-normal text-gray-600">
-                10,001+
-              </p>
+              <p className="font-normal text-gray-600">10,001+</p>
             </div>
             <div className="font-bold text-gray-900">
               Industry
-              <p className="font-normal text-gray-600">
-                Internet
-              </p>
+              <p className="font-normal text-gray-600">Internet</p>
             </div>
             <div className="font-bold text-gray-900">
               Type
-              <p className="font-normal text-gray-600">
-                Public Company
-              </p>
+              <p className="font-normal text-gray-600">Public Company</p>
             </div>
             <div className="font-bold text-gray-900">
               Founded
-              <p className="font-normal text-gray-600">
-                1998
-              </p>
+              <p className="font-normal text-gray-600">1998</p>
             </div>
             <div className="font-bold text-gray-900">
               Website
-              <p className="font-bold text-blue-700">
-                Google
-              </p>
+              <p className="font-bold text-blue-700">Google</p>
             </div>
           </div>
         </div>
@@ -60,7 +45,7 @@ const CompanyProfile = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CompanyProfile
+export default CompanyProfile;
