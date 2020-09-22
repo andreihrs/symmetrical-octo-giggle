@@ -1,13 +1,11 @@
-var mongoose = require("mongoose");
+const { model, Schema } = require("mongoose");
 
-var Schema = mongoose.Schema;
-
-var EmployeeSchema = new Schema({
-  name: { type: String, required: true, maxlength: 200, unique: true },
-  title: { type: String },
-  description: { type: String },
-  company: { type: String, required: true },
+const employeeSchema = new Schema({
+  userName: String,
+  title: String,
+  description: String,
+  company: String,
 });
 
 //Export model
-module.exports = mongoose.model("Employee", EmployeeSchema);
+module.exports = model("Employee", employeeSchema);

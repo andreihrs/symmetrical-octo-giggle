@@ -12,6 +12,9 @@
 # production
 /build
 
+# sensitive data
+config.js
+
 # misc
 .DS_Store
 .env.local
