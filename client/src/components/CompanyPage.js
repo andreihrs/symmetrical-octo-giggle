@@ -1,15 +1,31 @@
 import React from "react";
-import CompanyChart from "../components/CompanyChart.js";
-import CompanyProfile from "../components/CompanyProfile.js";
-import NavHeader from "../components/NavHeader.js";
-import OrgChart from "../components/OrgChart.js";
-import SideProfile from "../components/SideProfile.js";
+import CompanyChart from "./CompanyChart.js";
+import CompanyProfile from "./CompanyProfile.js";
+import NavHeader from "./NavHeader.js";
+import OrgChart from "./OrgChart.js";
+import SideProfile from "./SideProfile.js";
+import { useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+import FifaPlayers from "./FifaPlayers.js";
+
 // TO-DO: Dashboard to see natioanlity, ethnicity, jobs
 // TO-DO: Add suggested groups, cohorts, lists, etc.
 function CompanyPage() {
+  const { loading, error, data } = useQuery(GET_EMPLOYEES);
+
+  if (error) return <h1>Something went wrong</h1>;
+  if (loading) return <h1>Loading...</h1>;
+
+  let employees = [];
+  if (data) {
+    console.log(data.getEmployees);
+    employees = data.getEmployees;
+    employees = employees.slice(0, 10);
+  }
+
   return (
     <div>
-      <NavHeader />
+      {/* <NavHeader /> */}
       <CompanyProfile />
       <div className="flex justify-center text-left">
         <div>
@@ -26,19 +42,36 @@ function CompanyPage() {
                 viewBox="0 0 20 20"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
             </button>
           </span>
         </div>
       </div>
-      <OrgChart />
+      <FifaPlayers employees={employees} />
+      {/* <OrgChart /> */}
       {/* <CompanyChart /> */}
     </div>
   );
 }
+
+const GET_EMPLOYEES = gql`
+  {
+    getEmployees {
+      id
+      name
+      title
+    }
+  }
+`;
+
+const GET_COMPANY_EMPLOYEES = gql`
+  query getCompanyEmployees {
+    
+  }
+`;
 
 export default CompanyPage;
