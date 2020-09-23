@@ -8,6 +8,13 @@ module.exports = gql`
     userName: String!
     createdAt: String!
   }
+  type Employee {
+    id: ID!
+    name: String!
+    description: String!
+    title: String!
+    company: String!
+  }
   type Post {
     id: ID!
     body: String!
@@ -23,6 +30,8 @@ module.exports = gql`
   type Query {
     getPosts: [Post]
     getPost(postID: ID!): Post
+    getEmployees: [Employee]
+    getCompanyEmployees(filter: String): [Employee]
   }
   type Mutation {
     register(registerInput: RegisterInput): User!

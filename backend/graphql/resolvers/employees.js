@@ -3,14 +3,19 @@ const axios = require("axios");
 
 module.exports = {
   Query: {
-    users: async () => {
+    getEmployees: async () => {
       try {
-        const users = await axios.get("https://api.github.com/users");
-        return users.data.map(({ id, login, avatar_url }) => ({
-          id,
-          login,
-          avatar_url,
-        }));
+        const employees = await Employee.find();
+        return employees;
+      } catch (error) {
+        throw error;
+      }
+    },
+    async getCompanyEmployees(_, args) {
+      try {
+        const search = args.filter;
+        const employees = await Employee.find().where({ company: search });
+        return employees;
       } catch (error) {
         throw error;
       }

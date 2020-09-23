@@ -1,11 +1,12 @@
 import React from "react";
-import "./styles/main.css";
+// import "./styles/main.css";
 import LoginScreen from "./components/LoginScreen.js";
 import UserProfile from "./components/UserProfile.js";
 import SideProfile from "./components/SideProfile.js";
 import CompanyPage from "./containers/CompanyPage.js";
 import LandingPage from "./containers/LandingPage.js";
 import Dashboard from "./containers/Dashboard.js";
+import OrgChartNew from "./components/OrgChartNew";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div>
-      <Dashboard />
+      <OrgChartNew />
     </div>
   );
 }

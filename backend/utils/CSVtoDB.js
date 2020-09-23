@@ -1,45 +1,41 @@
 // Access a specific collection -> mongoose.model('<model name>', schema, '<collection name here>'))
 const fs = require("fs");
 const fastcsv = require("fast-csv");
-let stream = fs.createReadStream("AngelList.csv");
-let csvData = [];
 
-// let csvStream = fastcsv
-//     .parse()
-//     .on("data", function(data) {
-//         csvData.push({
-//             name: data[0],
-//             title: data[1],
-//             description: data[2],
-//             company: data[3]
-//         });
-//     })
-//     .on("end", function(){
-//         //remove the first line: header
-//         csvData.shift();
+const Employee = require("../models/Employee");
 
-//         console.log(csvData.length);
+const csvToDB = () => {
+  let stream = fs.createReadStream("AngelList.csv");
+  let csvData = [];
 
-//         Employee.collection.insertMany(csvData, onInsert);
+  let csvStream = fastcsv
+    .parse()
+    .on("data", function (data) {
+      csvData.push({
+        name: data[0],
+        title: data[1],
+        description: data[2],
+        company: data[3],
+      });
+    })
+    .on("end", function () {
+      //remove the first line: header
+      csvData.shift();
 
-//         function onInsert(err, docs) {
-//             if (err) {
-//                 throw error;
-//             } else {
-//                 console.info(`%d potatoes were successfully stored.`, docs.length)
-//             }
-//         }
-//         // database
-//         //         .db
-//         //         .collection("Employees")
-//         //         .insertMany(csvData, (err, res) => {
-//         //             if (err)
-//         //                 throw eror;
+      console.log(csvData.length);
 
-//         //             console.log(`Inserted: ${res.insertedCount} rows`);
-//         //         })
-//         // database.close();
-//         //save the MongoDB database to collection
-//     });
+      // Employee.insertMany(csvData, onInsert); TODO: make sure you don't include duplicates
 
-// stream.pipe(csvStream);
+      function onInsert(err, docs) {
+        if (err) {
+          throw error;
+        } else {
+          console.info(`%d potatoes were successfully stored.`, docs.length);
+        }
+      }
+    });
+
+  stream.pipe(csvStream);
+};
+
+module.exports = { csvToDB };
