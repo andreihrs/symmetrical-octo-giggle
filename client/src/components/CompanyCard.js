@@ -1,17 +1,22 @@
 import React from "react";
 import "../styles/main.css";
 import logo from "../logo.svg";
+import { Link } from "react-router-dom";
+import CompanyPage from "./CompanyPage";
 
-const CompanyCard = () => {
+const CompanyCard = ({ company }) => {
   return (
     <div className="relative bg-white my-12 px-8 mx-8 border border-gray-100 shadow-md lg:max-w-xl rounded-md">
-      <h2 className="py-4 my-4 text-3xl font-bold text-blue-800 leading-9">
-        Google
-      </h2>
-      <img
-        src={logo}
-        className="absolute top-0 right-0 -my-4 mx-4 h-16 w-16 md:h-24 md:w-24 rounded-full border border-gray-200 z-20 opacity-100 bg-white shadow-md  "
-      />
+      <Link to={`company/${company}`}>
+        <h2 className="py-4 my-4 text-3xl font-bold text-blue-800 leading-9">
+          {company}
+        </h2>
+        <img
+          src={logo}
+          className="absolute top-0 right-0 -my-4 mx-4 h-16 w-16 md:h-24 md:w-24 rounded-full border border-gray-200 z-20 opacity-100 bg-white shadow-md"
+          alt=""
+        />
+      </Link>
       <div className="flex items-center text-sm">
         <div className="flex items-center text-sm text-gray-600">
           <svg

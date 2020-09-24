@@ -7,15 +7,16 @@ import CompanyPage from "./components/CompanyPage.js";
 import LandingPage from "./components/LandingPage.js";
 import Dashboard from "./components/Dashboard.js";
 import OrgChartNew from "./components/OrgChartNew";
+import FifaShowcase from "./components/FifaShowcase";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <Route exact path="/welcome" component={Dashboard} />
-      <Route exact path="/login" component={LoginScreen} />
-      <Route exact path="/" component={LandingPage} />
-      <Route exact path="/company" component={CompanyPage} />
+      <Route exact path="/" component={FifaShowcase} />
+      <Route path="/login" component={LoginScreen} />
+      <Route path="/welcome" component={LandingPage} />
+      <Route path="/company/:name" component={CompanyPage} />
     </Router>
   );
 }

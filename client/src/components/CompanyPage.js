@@ -4,32 +4,35 @@ import CompanyProfile from "./CompanyProfile.js";
 import NavHeader from "./NavHeader.js";
 import OrgChart from "./OrgChart.js";
 import SideProfile from "./SideProfile.js";
+import { GET_COMPANY_EMPLOYEES } from "../graphql/queries";
 import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
 import FifaPlayers from "./FifaPlayers.js";
+import { useParams } from "react-router-dom";
 
 // TO-DO: Dashboard to see natioanlity, ethnicity, jobs
 // TO-DO: Add suggested groups, cohorts, lists, etc.
-function CompanyPage() {
-  const { loading, error, data } = useQuery(GET_EMPLOYEES);
+function CompanyPage(props) {
+  const { name } = useParams();
+
+  const { loading, error, data } = useQuery(GET_COMPANY_EMPLOYEES, {
+    variables: { filter: name },
+  });
 
   if (error) return <h1>Something went wrong</h1>;
   if (loading) return <h1>Loading...</h1>;
 
   let employees = [];
   if (data) {
-    console.log(data.getEmployees);
-    employees = data.getEmployees;
-    employees = employees.slice(0, 10);
+    console.log(data);
+    employees = data.getCompanyEmployees;
   }
 
   return (
     <div>
       {/* <NavHeader /> */}
-      <CompanyProfile />
-      <div className="flex justify-center text-left">
+      <CompanyProfile company={name} />
+      {/* <div className="flex justify-center text-left">
         <div>
-          {/* <SideProfile className="z-10"/> */}
           <span className="rounded-md shadow-sm">
             <button
               type="button"
@@ -50,28 +53,12 @@ function CompanyPage() {
             </button>
           </span>
         </div>
-      </div>
-      <FifaPlayers employees={employees} />
+      </div> */}
+      <FifaPlayers employees={employees} company={name} />
       {/* <OrgChart /> */}
       {/* <CompanyChart /> */}
     </div>
   );
 }
-
-const GET_EMPLOYEES = gql`
-  {
-    getEmployees {
-      id
-      name
-      title
-    }
-  }
-`;
-
-const GET_COMPANY_EMPLOYEES = gql`
-  query getCompanyEmployees {
-    
-  }
-`;
 
 export default CompanyPage;
