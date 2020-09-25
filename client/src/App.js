@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={FifaShowcase} />
+      <Route exact path="/" component={Dashboard} />
       <Route path="/login" component={LoginScreen} />
       <Route path="/welcome" component={LandingPage} />
       <Route path="/company/:name" component={CompanyPage} />
