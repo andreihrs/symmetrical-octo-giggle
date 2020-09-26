@@ -15,6 +15,7 @@ export const GET_COMPANY_EMPLOYEES = gql`
     getCompanyEmployees(filter: $filter) {
       id
       name
+      title
       company
     }
   }

@@ -1,58 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/main.css";
+import avatar from "../assets/avatar.svg";
+import FifaCard from "./FifaCard";
 
-const FifaShowcase = () => {
+const FifaShowcase = ({ employees }) => {
+  const [profile, setProfile] = useState({
+    name: "Gabriel Weinberg",
+    title: "Founder",
+  });
+  const handleClick = (name, title) => {
+    setProfile({ name, title });
+  };
+
+  // TODO: Add array of attributes for each title + scrollbar
+  // TODO: Add button to see more details about the profile
+  // TODO: Button to load more results
+  // TODO: Buttons for different marketing sections
+  //TODO: add (i) button to see more info about a player
+  //TODO: add more review from team members
+
   return (
-    <div className="mt-8 pb-12 bg-gray-50 sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24">
+    <div className="mt-8 pb-12 bg-gray-50 sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24 cursor-pointer">
       <div className="relative">
-        <div className="absolute inset-0 h-3/4 bg-gray-900"></div>
-        <div className="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-md mx-auto space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
-            <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-              <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                <div>
-                  <h3
-                    className="inline-flex px-4 py-1 rounded-full text-sm leading-5 font-semibold tracking-wide uppercase bg-indigo-100 text-indigo-600"
-                    id="tier-standard"
-                  >
-                    Standard
-                  </h3>
-                </div>
-                <div className="mt-4 flex items-baseline text-6xl leading-none font-extrabold">
-                  $49
-                  <span className="ml-1 text-2xl leading-8 font-medium text-gray-500">
-                    /mo
-                  </span>
-                </div>
-                <p className="mt-5 text-lg leading-7 text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </p>
-                <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
-                  <div className="rounded-md shadow">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
-                    >
-                      Get Started
-                    </a>
-                  </div>
-                </div>
+        <div className="absolute inset-0 h-3/4 border-gray-900 focus-outline-none"></div>
+        <div className="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 focus-outline-none">
+          <div className="max-w-md mx-auto space-y-4 lg:max-w-screen-lg lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
+            <div className="rounded-lg shadow-lg ">
+              <div className="py-8 bg-white sm:pt-0 sm:pb-0 overflow-y-auto">
+                <ul className="sm:grid sm:grid-cols-2 sm:gap-0">
+                  <li className="col-span-2">
+                    <div className="flex justify-between border border-gray-300 px-4 py-4 hover:bg-indigo-400 focus:outline-none focus:shadow-outline active:bg-indigo-600 transition ease-in-out duration-150 hover:text-white">
+                      <div className="flex flex-col ml-4">
+                        <h3 className="font-bold text-4xl">Gabriel Weinberg</h3>
+                        <h3 className="font-semibold text-2xl">Founder</h3>
+                      </div>
+                      <img className="h-20 w-20" src={avatar} alt="" />
+                    </div>
+                  </li>
+                  {employees.map((employee) => (
+                    <li key={employee.id}>
+                      <FifaCard
+                        name={employee.name}
+                        title={employee.title}
+                        handleClick={handleClick}
+                      />
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <div className="flex flex-col">
-              <div className="bg-white">
-                <div>
-                  <h3 className="inline-flex rounded-full px-2 py-1 text-indigo-600 bg-indigo-100">
-                    Enterprise
-                  </h3>
+            <div className="rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-white px-6 py-8 sm:p-10 sm:pb-6">
+                <div className="flex flex-row justify-around pt-6 pb-4">
+                  <img
+                    className="h-32 w-32 border-white border-4 rounded-full"
+                    src={avatar}
+                    alt=""
+                  />
+                  <div className="flex flex-col ml-2">
+                    <h2 className="text-gray-800 text-5xl font-bold">
+                      {profile.name}
+                    </h2>
+                    <h3 className="text-gray-800 tracking-wide text-3xl font-bold ml-1">
+                      {profile.title}
+                    </h3>
+                  </div>
                 </div>
-                <div className="flex items-baseline text-4xl">
-                  $150
-                  <span className="ml-1 text-xl">/mo</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <div>
-                  <a href="#">Get Started</a>
+                <hr />
+                <div className="md:grid md:grid-cols-7 md:gap-5 my-8 py-8">
+                  <div className="md:col-span-2 font-semibold flex items-end justify-start text-lg">
+                    Decision Making
+                  </div>
+                  <div className="md:col-span-4 flex items-center justify-center">
+                    <div className="w-full bg-gray-200 mt-2 flex flex-row">
+                      <div
+                        className="bg-teal-500 text-xs leading-none py-1 text-center text-white"
+                        style={{ width: "30%" }}
+                      ></div>
+                      <div
+                        className="bg-teal-200 leading-none py-1"
+                        style={{ width: "25%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-end">30-55%</div>
+                  <div className="md:col-span-2 font-semibold flex items-center justify-start text-lg">
+                    Integrity
+                  </div>
+                  <div className="md:col-span-4">
+                    <div className="w-full bg-gray-200 mt-2 flex flex-row">
+                      <div
+                        className="bg-teal-500 text-xs leading-none py-1 text-center text-white"
+                        style={{ width: "55%" }}
+                      ></div>
+                      <div
+                        className="bg-teal-200 leading-none py-1"
+                        style={{ width: "15%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">55-70%</div>
                 </div>
               </div>
             </div>

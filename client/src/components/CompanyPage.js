@@ -8,6 +8,7 @@ import { GET_COMPANY_EMPLOYEES } from "../graphql/queries";
 import { useQuery } from "@apollo/react-hooks";
 import FifaPlayers from "./FifaPlayers.js";
 import { useParams } from "react-router-dom";
+import FifaShowcase from "./FifaShowcase.js";
 
 // TO-DO: Dashboard to see natioanlity, ethnicity, jobs
 // TO-DO: Add suggested groups, cohorts, lists, etc.
@@ -55,6 +56,7 @@ function CompanyPage(props) {
         </div>
       </div> */}
       <FifaPlayers employees={employees} company={name} />
+      <FifaShowcase employees={employees} />
       {/* <OrgChart /> */}
       {/* <CompanyChart /> */}
     </div>
