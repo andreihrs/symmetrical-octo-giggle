@@ -2,93 +2,202 @@ import React from "react";
 import "../styles/main.css";
 
 const SideProfile = () => {
-  // TO-DO: ADD THE MOST IMPORTANT FEATURES OF A PROFILE
   return (
-    <div className="absolute flex flex-col w-64 inset-y-0 right-0 border-l border-gray-200 shadow-xs bg-white mt-16">
-      <div className="relative w-full text-gray-400 focus-within:text-gray-600">
-        <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-1">
-          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-            />
-          </svg>
-        </div>
-        <input
-          id="search_field"
-          className="block w-full h-full pl-8 pr-3 py-2 rounded-xs text-gray-900 placeholder-gray-500 border focus:outline-none focus:placeholder-gray-400 sm:text-sm"
-          placeholder="Search"
-          type="search"
-        />
-      </div>
-      <div className="pl-2">
-        <div className="mt-5 flex px-4 ">
-          <div className="mr-5">
-            <h4 className="text-xl font-medium tracking-tight leading-7">
-              Janet Perkins
-            </h4>
-            <p className="text-sm font-medium text-gray-500">
-              Software Developer
-            </p>
+    <div class="fixed inset-0 overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden">
+        <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex sm:pl-16">
+          {/* <!--
+          Slide-over panel, show/hide based on slide-over state.
+  
+          Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+            From: "translate-x-full"
+            To: "translate-x-0"
+          Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+            From: "translate-x-0"
+            To: "translate-x-full"
+        --> */}
+          <div class="w-screen max-w-2xl">
+            <div class="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
+              <header class="px-4 py-6 sm:px-6">
+                <div class="flex items-start justify-between space-x-3">
+                  <h2 class="text-lg leading-7 font-medium text-gray-900">
+                    Profile
+                  </h2>
+                  <div class="h-7 flex items-center">
+                    <button
+                      aria-label="Close panel"
+                      class="text-gray-400 hover:text-gray-500 transition ease-in-out duration-150"
+                    >
+                      {/* <!-- Heroicon name: x --> */}
+                      <svg
+                        class="h-6 w-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </header>
+              {/* <!-- Main --> */}
+              <div class="divide-y divide-gray-200">
+                <div class="pb-6">
+                  <div class="bg-indigo-700 h-24 sm:h-20 lg:h-28"></div>
+                  <div class="-mt-12 flow-root px-4 space-y-6 sm:-mt-8 sm:flex sm:items-end sm:px-6 sm:space-x-6 lg:-mt-15">
+                    <div>
+                      <div class="-m-1 flex">
+                        <div class="inline-flex rounded-lg overflow-hidden border-4 border-white">
+                          <img
+                            class="flex-shrink-0 h-24 w-24 sm:h-40 sm:w-40 lg:w-48 lg:h-48"
+                            src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="space-y-5 sm:flex-1">
+                      <div>
+                        <div class="flex items-center space-x-2.5">
+                          <h3 class="font-bold text-xl leading-7 text-gray-900 sm:text-2xl sm:leading-8">
+                            Ashley Porter
+                          </h3>
+                          <span
+                            aria-label="Online"
+                            class="bg-green-400 flex-shrink-0 inline-block h-2 w-2 rounded-full"
+                          ></span>
+                        </div>
+                        <p class="text-sm leading-5 text-gray-500">
+                          @ashleyporter
+                        </p>
+                      </div>
+                      <div class="flex flex-wrap">
+                        <span class="flex-shrink-0 w-full inline-flex rounded-md shadow-sm sm:flex-1">
+                          <button
+                            type="button"
+                            class="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                          >
+                            Message
+                          </button>
+                        </span>
+                        <span class="mt-3 flex-1 w-full inline-flex rounded-md shadow-sm sm:mt-0 sm:ml-3">
+                          <button
+                            type="button"
+                            class="w-full inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                          >
+                            Call
+                          </button>
+                        </span>
+                        <span class="mt-3 ml-3 inline-flex rounded-md shadow-sm sm:mt-0">
+                          <div class="relative inline-block text-left">
+                            <button
+                              type="button"
+                              class="inline-flex items-center p-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-400 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                            >
+                              {/* <!-- Heroicon name: dots-vertical --> */}
+                              <svg
+                                class="h-5 w-5"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                              </svg>
+                            </button>
+
+                            {/* <!--
+                            Dropdown panel, show/hide based on dropdown state.
+  
+                            Entering: "transition ease-out duration-100"
+                              From: "transform opacity-0 scale-95"
+                              To: "transform opacity-100 scale-100"
+                            Leaving: "transition ease-in duration-75"
+                              From: "transform opacity-100 scale-100"
+                              To: "transform opacity-0 scale-95"
+                          --> */}
+                            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                              <div class="rounded-md bg-white shadow-xs">
+                                <div
+                                  class="py-1"
+                                  role="menu"
+                                  aria-orientation="vertical"
+                                  aria-labelledby="options-menu"
+                                >
+                                  <a
+                                    href="#"
+                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                    role="menuitem"
+                                  >
+                                    View profile
+                                  </a>
+                                  <a
+                                    href="#"
+                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                    role="menuitem"
+                                  >
+                                    Copy profile link
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="px-4 py-5 sm:px-0 sm:py-0">
+                  <dl class="space-y-8 sm:space-y-0">
+                    <div class="sm:flex sm:space-x-6 sm:px-6 sm:py-5">
+                      <dt class="text-sm leading-5 font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                        Bio
+                      </dt>
+                      <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                        <p>
+                          Enim feugiat ut ipsum, neque ut. Tristique mi id
+                          elementum praesent. Gravida in tempus feugiat netus
+                          enim aliquet a, quam scelerisque. Dictumst in
+                          convallis nec in bibendum aenean arcu.
+                        </p>
+                      </dd>
+                    </div>
+                    <div class="sm:flex sm:space-x-6 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+                      <dt class="text-sm leading-5 font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                        Location
+                      </dt>
+                      <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                        New York, NY, USA
+                      </dd>
+                    </div>
+                    <div class="sm:flex sm:space-x-6 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+                      <dt class="text-sm leading-5 font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                        Website
+                      </dt>
+                      <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                        ashleyporter.com
+                      </dd>
+                    </div>
+                    <div class="sm:flex sm:space-x-6 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+                      <dt class="text-sm leading-5 font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                        Birthday
+                      </dt>
+                      <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                        <time datetime="1982-06-23">June 23, 1982</time>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            className="h-12 w-12 rounded-full"
-          />
-        </div>
-        <div className="mt-3 flex flex-col text-xs text-blue-700 leading-5">
-          <div className="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                className="heroicon-ui"
-                d="M9 12A5 5 0 1 1 9 2a5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2zm1-5a1 1 0 0 1 0-2 5 5 0 0 1 5 5v2a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3zm-2-4a1 1 0 0 1 0-2 3 3 0 0 0 0-6 1 1 0 0 1 0-2 5 5 0 0 1 0 10z"
-              />
-            </svg>
-            <a href="#" className="ml-1">
-              At Upgrowth since 2016
-            </a>
-          </div>
-          <div className="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="h-4 w-4"
-            >
-              <path d="M13 8V0L8.11 5.87 3 12h4v8L17 8h-4z" />
-            </svg>
-            <a href="#" className="ml-1">
-              Github Streak 353 days
-            </a>
-          </div>
-          <div className="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="h-4 w-4"
-            >
-              <path d="M15.75 8l-3.74-3.75a3.99 3.99 0 0 1 6.82-3.08A4 4 0 0 1 15.75 8zm-13.9 7.3l9.2-9.19 2.83 2.83-9.2 9.2-2.82-2.84zm-1.4 2.83l2.11-2.12 1.42 1.42-2.12 2.12-1.42-1.42zM10 15l2-2v7h-2v-5z" />
-            </svg>
-            <a href="#" className="ml-1">
-              Twitter 10k followers
-            </a>
-          </div>
-        </div>
-        <div className="flex justify-center -ml-2 mt-2">
-          <button className="bg-green-600 rounded-lg py-1 px-3 text-white text-sm">
-            Connect
-          </button>
-        </div>
-        <div className="mt-6">Connections</div>
-        <div className="mt-4">About</div>
-        <div className="mt-4">Kudos</div>
+        </section>
       </div>
     </div>
   );

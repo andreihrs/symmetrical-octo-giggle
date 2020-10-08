@@ -6,6 +6,8 @@ const resolvers = require("./graphql/resolvers");
 const { MONGODB } = require("./config.js");
 const CSVtoDB = require("./utils/CSVtoDB");
 
+const PORT = process.env.port || 4000;
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -15,7 +17,7 @@ mongoose
   .connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to database..");
-    return server.listen();
+    return server.listen({ port: PORT });
   })
   .then(({ url }) => console.log(`Server ready at ${url}`))
   .catch((err) => console.error(err));

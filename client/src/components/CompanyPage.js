@@ -9,11 +9,15 @@ import { useQuery } from "@apollo/react-hooks";
 import FifaPlayers from "./FifaPlayers.js";
 import { useParams } from "react-router-dom";
 import FifaShowcase from "./FifaShowcase.js";
+import "../styles/main.css";
+import FifaPlayersHeader from "./FifaPlayersHeader";
+import Filter from "../utils/Filter";
 
 // TO-DO: Dashboard to see natioanlity, ethnicity, jobs
 // TO-DO: Add suggested groups, cohorts, lists, etc.
 function CompanyPage(props) {
   const { name } = useParams();
+  const { showSide, setShowSide } = React.useState(false);
 
   const { loading, error, data } = useQuery(GET_COMPANY_EMPLOYEES, {
     variables: { filter: name },
@@ -30,7 +34,7 @@ function CompanyPage(props) {
 
   return (
     <div>
-      {/* <NavHeader /> */}
+      <NavHeader />
       <CompanyProfile company={name} />
       {/* <div className="flex justify-center text-left">
         <div>
@@ -55,7 +59,15 @@ function CompanyPage(props) {
           </span>
         </div>
       </div> */}
-      <FifaPlayers employees={employees} company={name} />
+      <div className="mt-12 sm:mt-24 border-t bg-white sm:px-20 sm:py-16 p-12">
+        <FifaPlayersHeader />
+        <div className="flex flex-start mt-12 space-x-8">
+          <Filter />
+          <Filter />
+        </div>
+        {/* <FifaPlayers employees={employees} company={name} /> */}
+      </div>
+      {false || showSide ? <SideProfile /> : null}
       <FifaShowcase employees={employees} />
       {/* <OrgChart /> */}
       {/* <CompanyChart /> */}

@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/main.css";
 import avatar from "../assets/avatar.svg";
 import FifaPlayers from "./FifaPlayers";
+import { Link } from "react-router-dom";
 
 const FifaPlayer = ({ name, title }) => {
   return (
+    // <Link to={`user/${}`}
     <div className="space-y-4">
       <img
         className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"

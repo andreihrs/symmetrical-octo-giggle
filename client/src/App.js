@@ -17,6 +17,7 @@ function App() {
       <Route path="/login" component={LoginScreen} />
       <Route path="/welcome" component={LandingPage} />
       <Route path="/company/:name" component={CompanyPage} />
+      {/* <Route exact path="/" component={SideProfile} /> */}
     </Router>
   );
 }
