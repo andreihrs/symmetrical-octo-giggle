@@ -1,6 +1,6 @@
 import React from "react";
 import CompanyChart from "./CompanyChart.js";
-import CompanyProfile from "./CompanyProfile.js";
+import CompanyProfile from "./CompanyHeader.js";
 import NavHeader from "./NavHeader.js";
 import OrgChart from "./OrgChart.js";
 import SideProfile from "./SideProfile.js";
@@ -12,16 +12,34 @@ import FifaShowcase from "./FifaShowcase.js";
 import "../styles/main.css";
 import FifaPlayersHeader from "./FifaPlayersHeader";
 import Filter from "../utils/Filter";
+import FifaCard from "./FifaCard";
+import FifaPlayer from "./FifaPlayer";
+import EmployeeCard from "./EmployeeCard";
+import EmployeesPreview from "./EmployeesPreview.js";
 
 // TO-DO: Dashboard to see natioanlity, ethnicity, jobs
 // TO-DO: Add suggested groups, cohorts, lists, etc.
 function CompanyPage(props) {
   const { name } = useParams();
+  const filters = ["Department", "Location", "Executive Level"];
   const { showSide, setShowSide } = React.useState(false);
 
   const { loading, error, data } = useQuery(GET_COMPANY_EMPLOYEES, {
     variables: { filter: name },
   });
+
+  const [profile, setProfile] = React.useState({
+    name: "Gabriel Weinberg",
+    title: "Founder",
+  });
+
+  const [showDirectors, setShowDirectors] = React.useState(false);
+  const [showManagers, setShowManagers] = React.useState(false);
+
+  const previewHandler = (e) => {
+    e.preventDefault();
+    setShowDirectors(!showDirectors);
+  };
 
   if (error) return <h1>Something went wrong</h1>;
   if (loading) return <h1>Loading...</h1>;
@@ -31,6 +49,10 @@ function CompanyPage(props) {
     console.log(data);
     employees = data.getCompanyEmployees;
   }
+
+  const styles = {
+    textClass: "md:flex  md:grid-cols-5 px-4 mb-2 border-l-4 border-gray-500",
+  };
 
   return (
     <div>
@@ -61,16 +83,92 @@ function CompanyPage(props) {
       </div> */}
       <div className="mt-12 sm:mt-24 border-t bg-white sm:px-20 sm:py-16 p-12">
         <FifaPlayersHeader />
-        <div className="flex flex-start mt-12 space-x-8">
-          <Filter />
-          <Filter />
+        <div className="flex flex-start mt-12 space-x-8 sm:mx-24">
+          <Filter search={filters[0]} />
+          <Filter search={filters[1]} />
+          <Filter search={filters[2]} />
         </div>
         {/* <FifaPlayers employees={employees} company={name} /> */}
       </div>
       {false || showSide ? <SideProfile /> : null}
-      <FifaShowcase employees={employees} />
-      {/* <OrgChart /> */}
-      {/* <CompanyChart /> */}
+      <div className="sm:px-20 sm:mx-24 mt-12">
+        <div className="md:grid md:grid-cols-5 border-l-8 border-blue-500 border-b px-4 mb-2">
+          <p className="text-2xl md:col-span-1 md:self-center font-semibold px-4 ">
+            C-Suite
+          </p>
+          <div className="md:col-span-2 md:col-start-3">
+            <EmployeeCard />
+          </div>
+        </div>
+        <div
+          className={`${styles.textClass} ${
+            showDirectors
+              ? "border-l-8 border-blue-500"
+              : "border-l-4 border-gray-500"
+          }`}
+        >
+          <p
+            className="text-2xl sm:self-center font-semibold md:col-span-1"
+            onClick={() => setShowDirectors(!showDirectors)}
+          >
+            Directors
+          </p>
+          {true && showDirectors ? (
+            <div className="grid md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+            </div>
+          ) : (
+            <EmployeesPreview onClick={previewHandler} />
+          )}
+        </div>
+        <div
+          className={`${styles.textClass} ${
+            showManagers
+              ? "border-l-8 border-blue-500"
+              : "border-l-4 border-gray-500"
+          }`}
+        >
+          <p
+            className="text-2xl sm:self-center font-semibold md:col-span-1 "
+            onClick={() => setShowManagers(!showManagers)}
+          >
+            Managers
+          </p>
+          {true && showManagers ? (
+            <div className="grid md:grid-cols-4 xl:grid-cols-6 ">
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+            </div>
+          ) : null}
+        </div>
+        <div className="md:flex border-l-4 md:grid-cols-5 border-gray-500 px-4">
+          <p className="text-2xl sm:self-center font-semibold md:col-span-1">
+            Seniors
+          </p>
+        </div>
+      </div>
+      {/* <CompanyChart />  */}
     </div>
   );
 }

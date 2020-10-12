@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/main.css";
 import "../styles/userprofile.css";
-import CompanyProfile from "./CompanyProfile";
+import CompanyProfile from "./CompanyHeader";
 import placehold from "../unsplash.jpg";
 import NavHeader from "./NavHeader";
 

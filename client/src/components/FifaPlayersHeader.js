@@ -5,7 +5,7 @@ const FifaHeader = () => {
   return (
     <div
       id="search-functions"
-      className="flex flex-col items-center sm:items-start space-y-8 sm:space-y-12"
+      className="flex flex-col items-center sm:items-start space-y-8 sm:space-y-12 sm:mx-24"
     >
       <h2 className="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">
         People
