@@ -34,7 +34,7 @@ const Features = () => {
           <rect
             width="404"
             height="784"
-            fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)"
+            fill="url(test.comb1e6e422-73f8-40a6-b5d9-c8586e37e0e7)"
           />
         </svg>
 
@@ -187,7 +187,7 @@ const Features = () => {
               <rect
                 width="784"
                 height="404"
-                fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)"
+                fill="url(test.comca9667ae-9f92-4be7-abcb-9e3d727f2941)"
               />
             </svg>
             <img
@@ -228,7 +228,7 @@ const Features = () => {
           <rect
             width="404"
             height="784"
-            fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
+            fill="url(test.com64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
           />
         </svg>
 
@@ -340,7 +340,7 @@ const Features = () => {
                 <rect
                   width="784"
                   height="404"
-                  fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)"
+                  fill="url(test.come80155a9-dfde-425a-b5ea-1f6fadd20131)"
                 />
               </svg>
               <img

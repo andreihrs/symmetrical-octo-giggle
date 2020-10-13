@@ -11,11 +11,11 @@ const HeroSection = () => {
   };
 
   const closeMenuRoot = () => {
-    if (menuOpen == true) setMenuOpen(!menuOpen);
+    if (menuOpen === true) setMenuOpen(!menuOpen);
   };
 
   const closeMenu = (event) => {
-    if (menuOpen == true) {
+    if (menuOpen === true) {
       event.stopPropagation();
       event.preventDefault();
     }
@@ -41,7 +41,7 @@ const HeroSection = () => {
             <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start">
               <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                 <div class="flex items-center justify-between w-full md:w-auto">
-                  <a href="#">
+                  <a href="test.com">
                     <img className="h-8 w-auto sm:h-10" src={logo} alt="" />
                   </a>
                   <div className="-mr-2 flex items-center md:hidden">
@@ -69,25 +69,25 @@ const HeroSection = () => {
               </div>
               <div className="hidden md:block md:ml-10 md:pr-4">
                 <a
-                  href="#"
+                  href="test.com"
                   className="font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
                 >
                   Explore
                 </a>
                 <a
-                  href="#"
+                  href="test.com"
                   className="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
                 >
                   News
                 </a>
                 <a
-                  href="#"
+                  href="test.com"
                   className="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
                 >
                   Features
                 </a>
                 <a
-                  href="#"
+                  href="test.com"
                   className="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
                 >
                   Log in
@@ -144,19 +144,19 @@ const HeroSection = () => {
                   </div>
                   <div className="px-2 pt-2 pb-3">
                     <a
-                      href="#"
+                      href="test.com"
                       className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
                     >
                       Exlore
                     </a>
                     <a
-                      href="#"
+                      href="test.com"
                       className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
                     >
                       News
                     </a>
                     <a
-                      href="#"
+                      href="test.com"
                       className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
                     >
                       Features
@@ -164,7 +164,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <a
-                      href="#"
+                      href="test.com"
                       className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out"
                     >
                       Log in
@@ -189,7 +189,7 @@ const HeroSection = () => {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
-                    href="#"
+                    href="test.com"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                   >
                     <Link to="/login">Get started</Link>
@@ -197,7 +197,7 @@ const HeroSection = () => {
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <a
-                    href="#"
+                    href="test.com"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                   >
                     <Link to="/company">Live demo</Link>

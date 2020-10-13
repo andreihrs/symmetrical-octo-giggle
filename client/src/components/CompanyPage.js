@@ -1,19 +1,14 @@
-import React from "react";
-import CompanyChart from "./CompanyChart.js";
+import React, { useState, prevState, useReducer } from "react";
 import CompanyProfile from "./CompanyHeader.js";
 import NavHeader from "./NavHeader.js";
-import OrgChart from "./OrgChart.js";
 import SideProfile from "./SideProfile.js";
 import { GET_COMPANY_EMPLOYEES } from "../graphql/queries";
 import { useQuery } from "@apollo/react-hooks";
 import FifaPlayers from "./FifaPlayers.js";
-import { useParams } from "react-router-dom";
-import FifaShowcase from "./FifaShowcase.js";
+import { useParams, useHistory } from "react-router-dom";
 import "../styles/main.css";
 import FifaPlayersHeader from "./FifaPlayersHeader";
 import Filter from "../utils/Filter";
-import FifaCard from "./FifaCard";
-import FifaPlayer from "./FifaPlayer";
 import EmployeeCard from "./EmployeeCard";
 import EmployeesPreview from "./EmployeesPreview.js";
 
@@ -21,24 +16,70 @@ import EmployeesPreview from "./EmployeesPreview.js";
 // TO-DO: Add suggested groups, cohorts, lists, etc.
 function CompanyPage(props) {
   const { name } = useParams();
-  const filters = ["Department", "Location", "Executive Level"];
-  const { showSide, setShowSide } = React.useState(false);
+  let history = useHistory();
+  const filters = ["Department", "Location", "Full Team"];
+  const { showSide, setShowSide } = useState(false);
 
   const { loading, error, data } = useQuery(GET_COMPANY_EMPLOYEES, {
     variables: { filter: name },
   });
 
-  const [profile, setProfile] = React.useState({
+  const [profile, setProfile] = useState({
     name: "Gabriel Weinberg",
     title: "Founder",
   });
 
-  const [showDirectors, setShowDirectors] = React.useState(false);
-  const [showManagers, setShowManagers] = React.useState(false);
+  const [sectionsState, setSectionsState] = useState({
+    directors: true,
+    managers: false,
+    seniors: false,
+  });
 
-  const previewHandler = (e) => {
+  const [filtersState, setFiltersState] = useState({
+    department: "",
+    location: "",
+    executiveLevel: "Full Team",
+  });
+
+  const [selectedEmployee, setSelectedEmployee] = useState(false);
+
+  const departments = ["Design", "Engineering", "Sales", "Marketing"];
+  const locations = ["US", "Europe"];
+  const executiveLevels = ["Seniors and up", "Managers and up", "C-Executives"];
+  const sections = ["directors", "managers", "seniors"];
+  const positions = [
+    "Director of Technology",
+    "Director of Data",
+    "Director of Marketing",
+    "VP of Marketing",
+    "Chief Marketing Officer",
+    "Marketing Senior",
+    "VP of Operations",
+    "Director of Design",
+    "VP of Design",
+    "VP of Engineering",
+  ];
+
+  const marketingPositions = positions.filter((position) =>
+    position.includes("Marketing")
+  );
+
+  const previewHandler = (e, section) => {
     e.preventDefault();
-    setShowDirectors(!showDirectors);
+    setSectionsState({ ...sectionsState, [section]: true });
+  };
+
+  const onSelectFilter = (e, option, search) => {
+    search = search[0].toLowerCase() + search.substring(1);
+    console.log(search);
+    if (search === "full Team") {
+      search = "executiveLevel";
+    }
+    setFiltersState({ ...filtersState, [search]: option });
+  };
+
+  const onSelectEmployee = (e, employee) => {
+    setSelectedEmployee(!selectedEmployee);
   };
 
   if (error) return <h1>Something went wrong</h1>;
@@ -51,7 +92,8 @@ function CompanyPage(props) {
   }
 
   const styles = {
-    textClass: "md:flex  md:grid-cols-5 px-4 mb-2 border-l-4 border-gray-500",
+    textClass: "md:flex md:grid-cols-5 px-4 mb-4 border-l-4 border-gray-500",
+    sectionClass: "relative grid md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8",
   };
 
   return (
@@ -84,15 +126,27 @@ function CompanyPage(props) {
       <div className="mt-12 sm:mt-24 border-t bg-white sm:px-20 sm:py-16 p-12">
         <FifaPlayersHeader />
         <div className="flex flex-start mt-12 space-x-8 sm:mx-24">
-          <Filter search={filters[0]} />
-          <Filter search={filters[1]} />
-          <Filter search={filters[2]} />
+          <Filter
+            search={filters[0]}
+            options={departments}
+            onSelectFilter={onSelectFilter}
+          />
+          <Filter
+            search={filters[1]}
+            options={locations}
+            onSelectFilter={onSelectFilter}
+          />
+          <Filter
+            search={filters[2]}
+            options={executiveLevels}
+            onSelectFilter={onSelectFilter}
+          />
         </div>
-        {/* <FifaPlayers employees={employees} company={name} /> */}
+        {/* <FifaPlayers employees={employees} company={name} history={history} /> */}
       </div>
       {false || showSide ? <SideProfile /> : null}
       <div className="sm:px-20 sm:mx-24 mt-12">
-        <div className="md:grid md:grid-cols-5 border-l-8 border-blue-500 border-b px-4 mb-2">
+        <div className="md:grid md:grid-cols-5 border-l-8 border-blue-500 px-4 mb-4">
           <p className="text-2xl md:col-span-1 md:self-center font-semibold px-4 ">
             C-Suite
           </p>
@@ -102,53 +156,73 @@ function CompanyPage(props) {
         </div>
         <div
           className={`${styles.textClass} ${
-            showDirectors
-              ? "border-l-8 border-blue-500"
+            sectionsState.directors
+              ? "border-l-8 border-blue-500 border-t"
               : "border-l-4 border-gray-500"
           }`}
         >
           <p
             className="text-2xl sm:self-center font-semibold md:col-span-1"
-            onClick={() => setShowDirectors(!showDirectors)}
+            onClick={() =>
+              setSectionsState({
+                ...sectionsState,
+                directors: !sectionsState.directors,
+              })
+            }
           >
             Directors
           </p>
-          {true && showDirectors ? (
-            <div className="grid md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
-              <div className="sm:col-span-2">
-                <EmployeeCard />
-              </div>
-              <div className="sm:col-span-2">
-                <EmployeeCard />
-              </div>
-              <div className="sm:col-span-2">
-                <EmployeeCard />
-              </div>
-              <div className="sm:col-span-2">
-                <EmployeeCard />
-              </div>
-              <div className="sm:col-span-2">
-                <EmployeeCard />
-              </div>
+          {true && sectionsState.directors ? (
+            <div className={`${styles.sectionClass}`}>
+              <div className="absolute opacity-50"></div>
+              {filtersState.department
+                ? positions
+                    .filter((position) =>
+                      position.includes(filtersState.department)
+                    )
+                    .map((position) => (
+                      <div className="sm:col-span-2">
+                        <EmployeeCard
+                          position={position}
+                          selected={onSelectEmployee}
+                        />
+                      </div>
+                    ))
+                : positions.map((position) => (
+                    <div className="sm:col-span-2">
+                      <EmployeeCard
+                        position={position}
+                        selected={onSelectEmployee}
+                      />
+                    </div>
+                  ))}
             </div>
           ) : (
-            <EmployeesPreview onClick={previewHandler} />
+            <EmployeesPreview
+              onClick={(e) => previewHandler(e, sections[0])}
+              section={sections[0]}
+            />
           )}
         </div>
         <div
           className={`${styles.textClass} ${
-            showManagers
-              ? "border-l-8 border-blue-500"
+            sectionsState.managers
+              ? "border-l-8 border-blue-500 border-t"
               : "border-l-4 border-gray-500"
           }`}
         >
           <p
             className="text-2xl sm:self-center font-semibold md:col-span-1 "
-            onClick={() => setShowManagers(!showManagers)}
+            onClick={() =>
+              setSectionsState({
+                ...sectionsState,
+                managers: !sectionsState.managers,
+              })
+            }
           >
             Managers
           </p>
-          {true && showManagers ? (
+          {true && sectionsState.managers ? (
             <div className="grid md:grid-cols-4 xl:grid-cols-6 ">
               <div className="sm:col-span-2">
                 <EmployeeCard />
@@ -160,12 +234,49 @@ function CompanyPage(props) {
                 <EmployeeCard />
               </div>
             </div>
-          ) : null}
+          ) : (
+            <EmployeesPreview
+              onClick={(e) => previewHandler(e, sections[1])}
+              section={sections[1]}
+            />
+          )}
         </div>
-        <div className="md:flex border-l-4 md:grid-cols-5 border-gray-500 px-4">
-          <p className="text-2xl sm:self-center font-semibold md:col-span-1">
+        <div
+          className={`${styles.textClass} ${
+            sectionsState.seniors
+              ? "border-l-8 border-blue-500 border-t"
+              : "border-l-4 border-gray-500"
+          }`}
+        >
+          <p
+            className="text-2xl sm:self-center font-semibold md:col-span-1"
+            onClick={() =>
+              setSectionsState({
+                ...sectionsState,
+                seniors: !sectionsState.seniors,
+              })
+            }
+          >
             Seniors
           </p>
+          {true && sectionsState.seniors ? (
+            <div className="grid md:grid-cols-4 xl:grid-cols-6 ">
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+              <div className="sm:col-span-2">
+                <EmployeeCard />
+              </div>
+            </div>
+          ) : (
+            <EmployeesPreview
+              onClick={(e) => previewHandler(e, sections[2])}
+              section={sections[2]}
+            />
+          )}
         </div>
       </div>
       {/* <CompanyChart />  */}

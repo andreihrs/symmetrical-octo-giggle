@@ -29,11 +29,11 @@ const BlogComponents = () => {
             <div class="flex-1 bg-white p-6 flex flex-col justify-between">
               <div class="flex-1">
                 <p class="text-sm leading-5 font-medium text-indigo-600">
-                  <a href="#" class="hover:underline">
+                  <a href="test.com" class="hover:underline">
                     Blog
                   </a>
                 </p>
-                <a href="#" class="block">
+                <a href="test.com" class="block">
                   <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
                     Boost your conversion rate
                   </h3>
@@ -46,7 +46,7 @@ const BlogComponents = () => {
               </div>
               <div class="mt-6 flex items-center">
                 <div class="flex-shrink-0">
-                  <a href="#">
+                  <a href="test.com">
                     <img
                       class="h-10 w-10 rounded-full"
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -56,7 +56,7 @@ const BlogComponents = () => {
                 </div>
                 <div class="ml-3">
                   <p class="text-sm leading-5 font-medium text-gray-900">
-                    <a href="#" class="hover:underline">
+                    <a href="test.com" class="hover:underline">
                       Roel Aufderhar
                     </a>
                   </p>
@@ -80,11 +80,11 @@ const BlogComponents = () => {
             <div class="flex-1 bg-white p-6 flex flex-col justify-between">
               <div class="flex-1">
                 <p class="text-sm leading-5 font-medium text-indigo-600">
-                  <a href="#" class="hover:underline">
+                  <a href="test.com" class="hover:underline">
                     Video
                   </a>
                 </p>
-                <a href="#" class="block">
+                <a href="test.com" class="block">
                   <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
                     How to use search engine optimization to drive sales
                   </h3>
@@ -98,7 +98,7 @@ const BlogComponents = () => {
               </div>
               <div class="mt-6 flex items-center">
                 <div class="flex-shrink-0">
-                  <a href="#">
+                  <a href="test.com">
                     <img
                       class="h-10 w-10 rounded-full"
                       src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -108,7 +108,7 @@ const BlogComponents = () => {
                 </div>
                 <div class="ml-3">
                   <p class="text-sm leading-5 font-medium text-gray-900">
-                    <a href="#" class="hover:underline">
+                    <a href="test.com" class="hover:underline">
                       Brenna Goyette
                     </a>
                   </p>
@@ -132,12 +132,12 @@ const BlogComponents = () => {
             <div class="flex-1 bg-white p-6 flex flex-col justify-between">
               <div class="flex-1">
                 <p class="text-sm leading-5 font-medium text-indigo-600">
-                  <a href="#" class="hover:underline">
+                  <a href="test.com" class="hover:underline">
                     {" "}
                     Case Study
                   </a>
                 </p>
-                <a href="#" class="block">
+                <a href="test.com" class="block">
                   <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
                     Improve your customer experience
                   </h3>
@@ -151,7 +151,7 @@ const BlogComponents = () => {
               </div>
               <div class="mt-6 flex items-center">
                 <div class="flex-shrink-0">
-                  <a href="#">
+                  <a href="test.com">
                     <img
                       class="h-10 w-10 rounded-full"
                       src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -161,7 +161,7 @@ const BlogComponents = () => {
                 </div>
                 <div class="ml-3">
                   <p class="text-sm leading-5 font-medium text-gray-900">
-                    <a href="#" class="hover:underline">
+                    <a href="test.com" class="hover:underline">
                       Daniela Metz
                     </a>
                   </p>

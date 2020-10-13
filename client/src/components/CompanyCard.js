@@ -77,7 +77,7 @@ const CompanyCard = ({ company }) => {
           <p className="text-sm">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Voluptatibus quia, nulla! &nbsp;
-            <a href="#" className="text-blue-800">
+            <a href="test.com" className="text-blue-800">
               Read more...
             </a>
           </p>
@@ -94,7 +94,7 @@ const CompanyCard = ({ company }) => {
               className="rounded-full h-10 w-10"
             />
             <div className="ml-3">
-              <a href="#" className="text-sm text-blue-800">
+              <a href="test.com" className="text-sm text-blue-800">
                 Paul York
               </a>
               <p className="text-sm">Software Engineer</p>
@@ -106,14 +106,14 @@ const CompanyCard = ({ company }) => {
               className="rounded-full h-10 w-10"
             />
             <div className="ml-3">
-              <a href="#" className="text-sm text-blue-800">
+              <a href="test.com" className="text-sm text-blue-800">
                 Paul York
               </a>
               <p className="text-sm">Software Engineer</p>
             </div>
           </div>
           <div className="flex items-center justify-center h-full">
-            <a href="#" className="text-sm font-semibold text-blue-800">
+            <a href="test.com" className="text-sm font-semibold text-blue-800">
               See more
             </a>
           </div>

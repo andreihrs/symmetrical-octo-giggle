@@ -16,12 +16,12 @@ const BlogSections = () => {
         </div>
         <div className="mt-12 pt-12 border-t-2 border-gray-100 grid gap-16 lg:grid-cols-3 lg:col-gap-5 lg:row-gap-12">
           <div>
-            <a href="#" className="inline-block">
+            <a href="test.com" className="inline-block">
               <span className="inline-flex items-center bg-indigo-100 py-1/2 px-3 rounded-full text-indigo-800 text-sm font-medium leading-5 ">
                 Article
               </span>
             </a>
-            <a href="#" className="block">
+            <a href="test.com" className="block">
               <h4 className="mt-3 text-2xl font-bold text-gray-900 leading-8">
                 Boost your conversion rate
               </h4>

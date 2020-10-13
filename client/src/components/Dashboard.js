@@ -30,7 +30,7 @@ const Dashboard = () => {
               <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
                 <div class="flex-1 px-4 py-2 text-sm leading-5 truncate">
                   <a
-                    href="#"
+                    href="test.com"
                     class="text-gray-900 font-medium hover:text-gray-600 transition ease-in-out duration-150"
                   >
                     Graph API
@@ -59,7 +59,7 @@ const Dashboard = () => {
               <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
                 <div class="flex-1 px-4 py-2 text-sm leading-5 truncate">
                   <a
-                    href="#"
+                    href="test.com"
                     class="text-gray-900 font-medium hover:text-gray-600 transition ease-in-out duration-150"
                   >
                     Component Design
@@ -88,7 +88,7 @@ const Dashboard = () => {
               <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
                 <div class="flex-1 px-4 py-2 text-sm leading-5 truncate">
                   <a
-                    href="#"
+                    href="test.com"
                     class="text-gray-900 font-medium hover:text-gray-600 transition ease-in-out duration-150"
                   >
                     Templates
@@ -117,7 +117,7 @@ const Dashboard = () => {
               <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
                 <div class="flex-1 px-4 py-2 text-sm leading-5 truncate">
                   <a
-                    href="#"
+                    href="test.com"
                     class="text-gray-900 font-medium hover:text-gray-600 transition ease-in-out duration-150"
                   >
                     React Components
@@ -202,7 +202,7 @@ const Dashboard = () => {
                       </td>
                       <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
                         <a
-                          href="#"
+                          href="test.com"
                           class="text-indigo-600 hover:text-indigo-900"
                         >
                           Edit

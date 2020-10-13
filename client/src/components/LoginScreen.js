@@ -14,7 +14,7 @@ const LoginScreen = () => {
           <p className="mt-2 text-center leading-5 text-gray-600">
             Or
             <a
-              href="#"
+              href="test.com"
               className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition duration-150 ease-in-out"
             >
               {" "}
@@ -22,7 +22,7 @@ const LoginScreen = () => {
             </a>
           </p>
         </div>
-        <form className="mt-8" action="#" method="POST">
+        <form className="mt-8" action="test.com" method="POST">
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm">
             <div>
@@ -58,7 +58,7 @@ const LoginScreen = () => {
 
             <div className="leading-6">
               <a
-                href="#"
+                href="test.com"
                 className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline trasition duration-150 ease-in-out"
               >
                 Forgot your password?

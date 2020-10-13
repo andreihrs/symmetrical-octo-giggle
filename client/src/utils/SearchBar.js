@@ -5,7 +5,7 @@ const SearchBar = () => {
   return (
     <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
       <div className="max-w-lg w-full lg:max-w-xs">
-        <label for="search" className="sr-only">
+        <label htmlFor="search" className="sr-only">
           Search
         </label>
         <div className="relative">

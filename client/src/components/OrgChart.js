@@ -30,7 +30,7 @@ const OrgChart = () => {
                 display ? "" : "flex flex-col justify-between items-center"
               }`}
             >
-              <a href="#" onClick={handleSeeMore1}>
+              <a href="test.com" onClick={handleSeeMore1}>
                 <img src="http://placehold.it/110x110" alt="CEO" />
                 <h4>Leonardo DiCaprio</h4>
                 <p>CEO</p>
@@ -58,7 +58,7 @@ const OrgChart = () => {
                           : "flex flex-col justify-around items-center"
                       }`}
                     >
-                      <a href="#" onClick={handleSeeMore2}>
+                      <a href="test.com" onClick={handleSeeMore2}>
                         <img src="http://placehold.it/110x110" alt="" />
                         <h4>Peter Carlson</h4>
                         <p>Sr. Software Developer</p>

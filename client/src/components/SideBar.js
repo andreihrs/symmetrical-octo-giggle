@@ -75,7 +75,7 @@ const SideBar = ({ children }) => {
               <div className="mt-5 flex-1 h-0 overflow-y-auto">
                 <nav className="px-2">
                   <a
-                    href="#"
+                    href="test.com"
                     className="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
                   >
                     <svg
@@ -94,7 +94,7 @@ const SideBar = ({ children }) => {
                     Dashboard
                   </a>
                   <a
-                    href="#"
+                    href="test.com"
                     className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                   >
                     <svg
@@ -113,7 +113,7 @@ const SideBar = ({ children }) => {
                     Team
                   </a>
                   <a
-                    href="#"
+                    href="test.com"
                     className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                   >
                     <svg
@@ -132,7 +132,7 @@ const SideBar = ({ children }) => {
                     Projects
                   </a>
                   <a
-                    href="#"
+                    href="test.com"
                     className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                   >
                     <svg
@@ -151,7 +151,7 @@ const SideBar = ({ children }) => {
                     Calendar
                   </a>
                   <a
-                    href="#"
+                    href="test.com"
                     className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                   >
                     <svg
@@ -170,7 +170,7 @@ const SideBar = ({ children }) => {
                     Documents
                   </a>
                   <a
-                    href="#"
+                    href="test.com"
                     className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                   >
                     <svg
@@ -208,7 +208,7 @@ const SideBar = ({ children }) => {
             {/* <!-- Sidebar component, swap this element with another sidebar if you like --> */}
             <nav className="flex-1 px-2 py-4 bg-gray-800">
               <a
-                href="#"
+                href="test.com"
                 className="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
               >
                 <svg
@@ -227,7 +227,7 @@ const SideBar = ({ children }) => {
                 Dashboard
               </a>
               <a
-                href="#"
+                href="test.com"
                 className="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
               >
                 <svg
@@ -246,7 +246,7 @@ const SideBar = ({ children }) => {
                 Team
               </a>
               <a
-                href="#"
+                href="test.com"
                 className="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
               >
                 <svg
@@ -265,7 +265,7 @@ const SideBar = ({ children }) => {
                 Projects
               </a>
               <a
-                href="#"
+                href="test.com"
                 className="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
               >
                 <svg
@@ -284,7 +284,7 @@ const SideBar = ({ children }) => {
                 Calendar
               </a>
               <a
-                href="#"
+                href="test.com"
                 className="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
               >
                 <svg
@@ -303,7 +303,7 @@ const SideBar = ({ children }) => {
                 Documents
               </a>
               <a
-                href="#"
+                href="test.com"
                 className="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
               >
                 <svg
@@ -438,21 +438,21 @@ const SideBar = ({ children }) => {
                       aria-labelledby="user-menu"
                     >
                       <a
-                        href="#"
+                        href="test.com"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
                         role="menuitem"
                       >
                         Your Profile
                       </a>
                       <a
-                        href="#"
+                        href="test.com"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
                         role="menuitem"
                       >
                         Settings
                       </a>
                       <a
-                        href="#"
+                        href="test.com"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
                         role="menuitem"
                       >

@@ -37,9 +37,9 @@ const SideProfile = () => {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M6 18L18 6M6 6l12 12"
                         />
                       </svg>
@@ -131,14 +131,14 @@ const SideProfile = () => {
                                   aria-labelledby="options-menu"
                                 >
                                   <a
-                                    href="#"
+                                    href="angel.co"
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
                                     role="menuitem"
                                   >
                                     View profile
                                   </a>
                                   <a
-                                    href="#"
+                                    href="angel.co"
                                     class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
                                     role="menuitem"
                                   >

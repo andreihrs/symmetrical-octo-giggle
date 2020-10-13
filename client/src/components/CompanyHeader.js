@@ -15,7 +15,7 @@ const CompanyProfile = ({ company }) => {
         <select aria-label="Selected tab" className="form-select block w-full">
           <option>Key Executives</option>
           <option>Overview</option>
-          <option selected>Team Members</option>
+          <option defaultValue>Team Members</option>
         </select>
       </div>
       <div className="hidden sm:block sm:self-end">
@@ -23,7 +23,7 @@ const CompanyProfile = ({ company }) => {
         <div className="border-b border-gray-200">
           <nav className="flex -mb-px">
             <a
-              href="#"
+              href="test.com"
               className="group inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
             >
               <svg
@@ -33,15 +33,15 @@ const CompanyProfile = ({ company }) => {
                 fill="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
               <span>Key Executives</span>
             </a>
             <a
-              href="#"
+              href="google.com"
               className="ml-8 group inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
             >
               <svg
@@ -51,15 +51,15 @@ const CompanyProfile = ({ company }) => {
                 fill="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
               <span>Overview</span>
             </a>
             <a
-              href="#"
+              href="test.com"
               className="ml-8 group inline-flex items-center py-4 px-1 border-b-2 border-indigo-500 font-medium text-sm leading-5 text-indigo-600 focus:outline-none focus:text-indigo-800 focus:border-indigo-700"
               aria-current="page"
             >
