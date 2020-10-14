@@ -41,7 +41,10 @@ function CompanyPage(props) {
     executiveLevel: "Full Team",
   });
 
-  const [selectedEmployee, setSelectedEmployee] = useState(false);
+  const [selectedEmployee, setSelectedEmployee] = useState({
+    employeesState: false,
+    employeeSelected: null,
+  });
 
   const departments = ["Design", "Engineering", "Sales", "Marketing"];
   const locations = ["US", "Europe"];
@@ -78,8 +81,19 @@ function CompanyPage(props) {
     setFiltersState({ ...filtersState, [search]: option });
   };
 
-  const onSelectEmployee = (e, employee) => {
-    setSelectedEmployee(!selectedEmployee);
+  const onSelectEmployee = (employee) => {
+    setSelectedEmployee((prevState) => {
+      if (prevState.employeeSelected === employee) {
+        return { ...prevState, employeesState: false, employeeSelected: "" };
+      } else {
+        return {
+          ...prevState,
+          employeesState: true,
+          employeeSelected: employee,
+        };
+      }
+    });
+    setSectionsState({ ...sectionsState, ["managers"]: true });
   };
 
   if (error) return <h1>Something went wrong</h1>;
@@ -174,7 +188,6 @@ function CompanyPage(props) {
           </p>
           {true && sectionsState.directors ? (
             <div className={`${styles.sectionClass}`}>
-              <div className="absolute opacity-50"></div>
               {filtersState.department
                 ? positions
                     .filter((position) =>
@@ -189,7 +202,15 @@ function CompanyPage(props) {
                       </div>
                     ))
                 : positions.map((position) => (
-                    <div className="sm:col-span-2">
+                    <div
+                      className={`relative sm:col-span-2 ${
+                        !selectedEmployee.employeesState
+                          ? null
+                          : selectedEmployee.employeeSelected === position
+                          ? "opacity-100"
+                          : "opacity-50"
+                      }`}
+                    >
                       <EmployeeCard
                         position={position}
                         selected={onSelectEmployee}

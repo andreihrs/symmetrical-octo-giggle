@@ -2,10 +2,23 @@ import React from "react";
 import "../styles/main.css";
 
 const EmployeeCard = ({ position, selected }) => {
+  const [clicked, setClicked] = React.useState(false);
+
+  const handleClick = (e, position) => {
+    e.preventDefault();
+    setClicked(!clicked);
+    console.log(position);
+    selected(position);
+  };
+
+  const styles = {
+    divClass: "w-full flex items-center justify-start p-4 space-x-4",
+  };
+
   return (
     <div
-      className="w-full flex items-center justify-start p-4 space-x-4"
-      onClick={(e) => selected(position)}
+      className={`${styles.divClass} ${clicked ? "opacity-100" : null}`}
+      onClick={(e) => handleClick(e, position)}
     >
       <img
         className="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"
